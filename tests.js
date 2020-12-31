@@ -185,7 +185,9 @@ const forEachTest = [1, 2, 3, 4]
 myForEach(forEachTest, (v) => {
   forEachSum += v
 })
-test(0, forEachSum, null, null)
+test(0, forEachSum, 0, 10)
+
+console.log('\n')
 
 // myFilter
 console.log('Testing myFilter')
@@ -227,7 +229,7 @@ const reduceTests = [
   [[[1, 2, 3, 4], (acc, cur) => acc + cur, 0], 10],
   [[[1, 2, 3, 4], (acc, cur) => acc + cur, 5], 15],
 ]
-filterTests.forEach(([input, output], i) =>
+reduceTests.forEach(([input, output], i) =>
   test(i, myReduce(...input), input, output)
 )
 console.log('\n')
