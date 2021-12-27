@@ -24,7 +24,7 @@ const zip = (arr1, arr2) => {}
 const unzip = (arr) => {}
 
 // TODO - write a function which shifts a string `num` characters to the right
-// Example = shiftThree("Hello") === "lloHe"
+// Example = shiftRight("Hello", 3) === "lloHe"
 const shiftRight = (str, num) => {}
 
 // CHALLENGE - write a function which returns the current date in the following string format:
