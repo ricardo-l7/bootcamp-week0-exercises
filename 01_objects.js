@@ -25,23 +25,37 @@ const TreeOfLife = {
     protista: 'What even is this?',
   },
   // The best domain's key
-  bestDomain: 'archae',
+  bestDomain: 'eukarya',
 }
 
 //TODO -- Write a function which returns the domain "archae"
-const getArchae = () => {}
+const getArchae = () => {
+  return (TreeOfLife.archae);
+
+};
 
 // TODO -- Write a function which returns the array of humans
-const getHumans = () => {}
+const getHumans = () => {
+  return (TreeOfLife.eukarya.animalia.humans);
+};
 
 // TODO -- Write a function which adds a name to the array of humans
-const addHuman = (name) => {}
+const addHuman = (name) => {
+  TreeOfLife.eukarya.animalia.humans.push(name);
+};
 
 // TODO -- Write a fuction which returns the data representing the "bestDomain"
-const getBestDomain = () => {}
+const getBestDomain = () => {
+  let key = TreeOfLife.bestDomain;
+  return (TreeOfLife[key]);
+};
 
 // TODO -- Write a function which sets the best domain to "eukarya" and then returns the "bestDomain"
-const setGetBestDomain = () => {}
+const setGetBestDomain = () => {
+  TreeOfLife.bestDomain = "eukarya";
+  let key = TreeOfLife.bestDomain;
+  return (TreeOfLife[key]);
+};
 
 /**
   TODO
@@ -53,10 +67,40 @@ const setGetBestDomain = () => {}
     'phylum',
   ]
  */
-const getRanks = () => {}
+const getRanks = () => {
+  let {
+    rank: rank1,
+    archae: archbact,
+    bacteria: eubact,
+    eukarya: {
+      rank: rank2,
+      plantae: [item1, item2, item3],
+      animalia: {
+        rank: rank3,
+        birds: text,
+        humans: [human1, human2, human3, human4, human5],
+      },
+      fungi: {
+        guy: funText,
+      },
+      protista: confText,
+    },
+    bestDomain: bestKey,
+  } = TreeOfLife;
+  let ranks = [];
+  ranks.push(rank1);
+  ranks.push(rank2);
+  ranks.push(rank3);
+  return ranks;
+};
+
 
 // TODO -- Write a function which uses destructuring and the rest operator to return everything BUT the "eukarya"
-const noEukaryotes = () => {}
+const noEukaryotes = () => {
+  let {rank, ...rest} = TreeOfLife;
+  const newObj = {'rank': rank, 'archae': rest.archae, 'bacteria': rest.bacteria, 'bestDomain': rest.bestDomain};
+  return (newObj);
+};
 
 module.exports = {
   getArchae,
